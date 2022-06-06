@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DeliveryActivity">
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="DELIVERY"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/delivery_brand"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/btn_grab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#7EBF32"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_now"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="GRAB"/>
+        <Button
+            android:id="@+id/btn_now"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/btn_grab"
+            app:layout_constraintRight_toLeftOf="@id/btn_baemin"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="#F6693D"
+            android:text="NOW"/>
+        <Button
+            android:id="@+id/btn_baemin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/btn_now"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="#2196F3"
+            android:text="BAEMIN"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/img_delivery"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_below="@id/delivery_brand"
+        android:src="@drawable/now" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_thong_tin_chi_tiet"
+        android:gravity="center"
+        android:layout_below="@id/img_delivery">
+
+        <TextView
+            android:id="@+id/thong_tin_chi_tiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin chi tiết của "
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/delivery_brand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/thong_tin_chi_tiet"
+            android:text="GRAB"
+            android:textAlignment="center"
+            android:textColor="#7EBF32"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_below="@id/layout_thong_tin_chi_tiet"
+        android:layout_width="250dp"
+        android:layout_height="1dip"
+        android:layout_centerHorizontal="true"
+        android:background="#FF0000FF"/>
+
+    <LinearLayout
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_thong_tin_chi_tiet"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                android:textSize="18sp"
+                android:text="Tổng số đơn hàng: "/>
+            <TextView
+                android:id="@+id/amount_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#C11C1C"
+                android:text="17"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                android:textSize="18sp"
+                android:text="Phần trăm hoa hồng: "/>
+            <TextView
+                android:id="@+id/commission_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#C11C1C"
+                android:text="10%"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                android:textSize="18sp"
+                android:text="Tổng tiền hoa hồng: "/>
+            <TextView
+                android:id="@+id/total_commission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#C11C1C"
+                android:text="5.000.000 VNĐ"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                android:textSize="18sp"
+                android:text="Tổng đài: "/>
+            <TextView
+                android:id="@+id/phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#C11C1C"
+                android:text="0212345678"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_move_to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_baseline_home_24"/>
+</RelativeLayout>
